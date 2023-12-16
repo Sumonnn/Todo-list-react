@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 
 
@@ -22,12 +23,14 @@ const Taskform = ({ setformData, formData, setTasks }) => {
                 formData,
             ]
         })
+        toast.success('Add Task!');
         setformData({
             task: '',
             description: '',
         })
 
     }
+
 
     return (
 
@@ -49,7 +52,7 @@ const Taskform = ({ setformData, formData, setTasks }) => {
                     value={formData.description}
                     className="text-lg w-2/5 py-2 placeholder:text-zinc-700 rounded-lg bg-zinc-300 border border-b-zinc-900"
                 />
-                <button className="text-white bg-zinc-900 px-10 px-2 rounded-xl font-semibold">Add Task</button>
+                <button className="text-white bg-zinc-900 px-8 px-2 rounded-xl font-semibold">Add Task</button>
             </form>
         </div>
     )

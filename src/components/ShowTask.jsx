@@ -10,7 +10,7 @@ const ShowTask = (props) => {
         <>
             {
                 props.Tasks.map((task, index) => {
-                    return <Task removeTask={removeTask} key={index} task={task} />
+                    return <Task removeTask={removeTask} index={index} key={index} task={task} />
                 })
             }
         </>

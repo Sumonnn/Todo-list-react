@@ -4,6 +4,7 @@ import Taskform from './components/Taskform'
 import Title from './components/Title'
 import NoTask from './components/NoTask'
 import ShowTask from './components/ShowTask'
+import { toast } from 'react-toastify'
 
 function App() {
 
@@ -12,14 +13,18 @@ function App() {
     description: '',
   })
   const [Tasks, setTasks] = useState([
-    {
-      task: 'task-1',
-      description: 'This is my name and the name is golam masud.so besically',
-    }
+    // {
+    //   task: 'task-1',
+    //   description: 'This is my name and the name is golam masud.so besically',
+    // }
   ]);
 
-  function removeTask(index){
-      console.log(index);
+  function removeTask(index) {
+    const copyTask = [...Tasks];
+    copyTask.splice(index, 1);
+    setTasks(copyTask);
+    toast.error('Task Removed!!!')
+    // console.log(index);
   }
 
   return (
